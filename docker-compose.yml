@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  database:
+    image: postgres
+    ports:
+      - '5432:5432'
+    container_name: ecommerce
+    restart: always
+    volumes:
+      - postgres-disk:/var/lib/postgresql/database
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: ecommerce
+volumes:
+  postgres-disk:
